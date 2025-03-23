@@ -1,16 +1,16 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { AutoStopRecorder } from "@/components/auto-stop-recorder"
+import { AutoStopRecorder } from "@/components/auto_stop_recorder.js"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Trash } from "lucide-react"
-import { sendAudioToScribe } from "@/lib/actions"
-import { saveChatToDatabase, fetchChatHistory } from "@/lib/api"
+import { sendAudioToScribe } from "@/libs/actions.js"
+import { saveChatToDatabase, fetchChatHistory } from "@/libs/api.js"
 
 export function ChatInterface() {
   const [messages, setMessages] = useState([])
-  const [latestResponse, setLatestResponse] = useState<string>("")
+  const [latestResponse, setLatestResponse] = useState("")
   const [isProcessing, setIsProcessing] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
 

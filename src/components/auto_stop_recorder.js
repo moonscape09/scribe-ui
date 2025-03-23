@@ -12,12 +12,12 @@ export function AutoStopRecorder({
 }) {
   const [isRecording, setIsRecording] = useState(false)
   const [permissionDenied, setPermissionDenied] = useState(false)
-  const mediaRecorderRef = useRef<MediaRecorder | null>(null)
-  const audioContextRef = useRef<AudioContext | null>(null)
-  const analyserRef = useRef<AnalyserNode | null>(null)
+  const mediaRecorderRef = useRef(null)
+  const audioContextRef = useRef(null)
+  const analyserRef = useRef(null)
   const audioChunksRef = useRef([])
-  const silenceTimerRef = useRef<NodeJS.Timeout | null>(null)
-  const streamRef = useRef<MediaStream | null>(null)
+  const silenceTimerRef = useRef(null)
+  const streamRef = useRef(null)
 
   useEffect(() => {
     // Clean up when component unmounts
